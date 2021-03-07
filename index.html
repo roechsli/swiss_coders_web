@@ -27,6 +27,8 @@
 
     // Load the image model and setup the webcam
     async function init() {
+        sendJSON();
+        
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
@@ -51,6 +53,20 @@
             labelContainer.appendChild(document.createElement("div"));
         }
     }
+    
+    function sendJSON() {
+    var data = {
+        code: "forward",
+        speed: 20
+    };
+
+    var json = JSON.stringify(data);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "http://192.168.43.235:8000/cmd");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send(json);
+}
 
     async function loop() {
         webcam.update(); // update the webcam frame
