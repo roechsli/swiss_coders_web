@@ -1,15 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<meta charset="UTF-8">
-<title>Page Title</title>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="">
-<style>
-</style>
-<script src=""></script>
-<body>
-
-
 <div>Teachable Machine Image Model</div>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
@@ -27,7 +15,6 @@
 
     // Load the image model and setup the webcam
     async function init() {
-        
         const modelURL = URL + "model.json";
         const metadataURL = URL + "metadata.json";
 
@@ -52,8 +39,6 @@
             labelContainer.appendChild(document.createElement("div"));
         }
     }
-   
-}
 
     async function loop() {
         webcam.update(); // update the webcam frame
@@ -72,7 +57,3 @@
         }
     }
 </script>
-
-
-</body>
-</html>
